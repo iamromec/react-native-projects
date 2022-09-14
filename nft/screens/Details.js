@@ -1,14 +1,14 @@
 import React from 'react';
-import { Text, View, SafeAreaView, Image, StatusBar, FlatList } from 'react-native';
+import { Text, View, SafeAreaView, FlatList } from 'react-native';
 
-import { COLORS, FONTS, SIZES, SHADOWS, assets } from '../constants';
-import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid, DetailsHeader } from '../components';
+import { COLORS, FONTS, SIZES, SHADOWS } from '../constants';
+import { RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid, DetailsHeader } from '../components';
 
 const Details = ({ route, navigation }) => {
   const { data } = route.params;
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white'  }}>
       <FocusedStatusBar
         barStyle="dark-content"
         backgroundColor="transparent"
@@ -33,7 +33,7 @@ const Details = ({ route, navigation }) => {
         keyExtractor={ (item) => item.id }
         showVerticalScrollIndicator={false}
         contentContainerStyle={{
-          paddingBottom: SIZES.extraLarge
+          paddingBottom: SIZES.extraLarge,
         }}
         ListHeaderComponent={() => (
           <React.Fragment>

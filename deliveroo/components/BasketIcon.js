@@ -13,11 +13,13 @@ const BasketIcon = () => {
   const total = useSelector(selectBasketTotal);
   const restaurant = useSelector(selectRestaurant);
 
+  if (!items.length) return;
+
   return (
     <View className="absolute bottom-10 w-full z-50">
       <TouchableOpacity
         onPress={() => navigation.navigate("Basket")}
-        className="mx-5 p-4 rounded-lg flex-row items-center space-x-1"
+        className="mx-5 p-3 rounded-lg flex-row items-center space-x-1"
         style={{ backgroundColor: colors.primary }}
       >
         <View className="rounded" style={{ backgroundColor: colors.pdark }}>

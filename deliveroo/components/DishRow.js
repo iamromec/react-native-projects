@@ -28,7 +28,7 @@ const DishRow = ({ id, name, description, price, image }) => {
     <>
       <TouchableOpacity
         className={`bg-white border p-4 border-gray-100 flex-row ${
-          isPressed && "border-b-0"
+          isPressed || items.length ? "border-b-0" : ""
         }`}
         onPress={() => setIsPressed(!isPressed)}
       >
@@ -46,9 +46,9 @@ const DishRow = ({ id, name, description, price, image }) => {
         </View>
       </TouchableOpacity>
 
-      {isPressed && (
-        <View className="bg-white px-4">
-          <View className="flex-row items-center space-x-2 pb-3">
+      {isPressed || items.length ? (
+        <View className="bg-white px-4 py-3">
+          <View className="flex-row items-center space-x-2">
             <TouchableOpacity
               onPress={removeItemFromBasket}
               disabled={!items.length}
@@ -66,7 +66,7 @@ const DishRow = ({ id, name, description, price, image }) => {
             </TouchableOpacity>
           </View>
         </View>
-      )}
+      ) : null}
     </>
   );
   r;
